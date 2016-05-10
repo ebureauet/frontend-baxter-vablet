@@ -1,0 +1,218 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 768px;
+  width: 1024px;
+  overflow: hidden;
+}
+
+body {
+  color: #FFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4; 
+}
+
+span { color: $orange;  }
+
+.hidden { opacity: 0 !important; }
+.visible { opacity: 1 !important; }
+.displaynone { display: none; }
+
+.overlay-menu {
+  background: rgba(#000,0.4);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2; 
+}
+
+.side-menu {
+  background: $gray;
+  height: 768px;
+  left: -240px;
+  position: fixed;
+  width: 240px;
+  z-index: 2;
+
+  .logo {
+    left: 0;
+    position: absolute;
+    top: 704px;
+  }
+  img { 
+    width: 100%; 
+  }
+  .btn {
+    background-size: 45px 45px;
+    height: 45px;
+    position: absolute;
+    width: 45px;
+    background-repeat: no-repeat;
+
+    &.btn-close {
+      background-image: url(../img/btn-close.png);
+      top: 0;
+      left: 195px;
+    }
+    &.btn-home {
+      background-image: url(../img/btn-home.jpg);
+      top: 45px; 
+      left: 195px;
+    }
+    &.btn-contact {
+      background-image: url(../img/btn-contact.jpg);
+      top: 90px; 
+      left: 195px;
+    }
+  }
+  .slide-nav {
+    height: 768px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 64px;
+    position: relative;
+    width: 240px;
+    
+    img { float: left; }
+    div { 
+      float: left;
+      position: relative; 
+
+      &:before {
+        background: #fff;
+        bottom: 0;
+        color: #173176;
+        content: ' ';
+        display: block;
+        font-size: 17px;
+        height: 40px;
+        left: 30px;
+        line-height: 30px;
+        position: absolute;
+        text-align: center;
+        width: 30px;
+      }
+      @for $i from 1 to 13 {
+        &:nth-of-type(#{$i}):before { content: '#{$i}'; }
+      }
+    }
+    .active:after { 
+      background: rgba(#c56702, 0.4);
+      border: solid 10px #849ebb; 
+      content: ' ';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+.btn-menu {
+  background: url(../img/btn-menu.png) no-repeat;
+  background-size: 45px 45px;
+  display: block;
+  height: 45px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 45px;
+  z-index: 3;
+}
+input[type='text'], input[type='email'] {
+  border: none;
+  border-radius: 5px;
+  font-size: 27px;
+  font-weight: 100;
+  height: 60px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  
+  &.error {
+    border: solid 3px $error;
+  }
+}
+::placeholder {
+  color: #849ebb;
+  font-family: "Helvetica Neue Light";
+  padding-top: 4px;
+}
+h1 {
+  font-family: "Helvetica Neue";
+}
+select {
+  border: solid 2px transparent;
+  font-size: 27px;
+  margin-bottom: 25px;
+  width: 100%;
+  
+  &.error { border: solid 2px $error; }
+}
+input[type="submit"] {
+  -webkit-appearance: none;
+  background: $orange;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 31px;
+  height: 60px;
+  margin-top: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.checkbox-container {
+  min-height: 40px;
+  padding-left: 45px;
+  position: relative;
+  
+  input[type="checkbox"] { 
+    left: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+  }
+  label {
+    display: block;
+    position: relative;
+    font-family: "Helvetica Neue Light";
+    
+    &:before {
+      border: solid 2px #fff; 
+      border-radius: 5px;
+      content: ' ';
+      height: 30px;
+      left: -45px; 
+      position: absolute;
+      top: 5px; 
+      width: 30px;
+    }
+
+    &.error {
+      &:before { border: solid 2px $error; }
+    }
+  }
+  input[type="checkbox"]:checked + label { 
+    &:after {
+      content: '+';
+      font-size: 40px;
+      left: -43px;
+      line-height: 0;
+      position: absolute;
+      transform: rotate(45deg);
+      top: 21px;
+    }
+  }
+}
