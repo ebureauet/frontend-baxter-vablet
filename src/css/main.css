@@ -3207,41 +3207,53 @@ Copyright (c) 2015 Daniel Eden
   .owl-slide .init {
     display: block; }
 
+.owl-slide0 {
+  background-image: url(../img/presentation/00-bg.jpg); }
+
 .owl-slide1 {
-  background-image: url(../img/1.jpg); }
+  background-image: url(../img/presentation/01-bg.jpg); }
 
 .owl-slide2 {
-  background-image: url(../img/2.jpg); }
+  background-image: url(../img/presentation/02-bg.jpg); }
 
 .owl-slide3 {
-  background-image: url(../img/3.jpg); }
+  background-image: url(../img/presentation/03-bg.jpg); }
 
 .owl-slide4 {
-  background-image: url(../img/4.jpg); }
+  background-image: url(../img/presentation/04-bg.jpg); }
 
 .owl-slide5 {
-  background-image: url(../img/5.jpg); }
+  background-image: url(../img/presentation/05-bg.jpg); }
 
 .owl-slide6 {
-  background-image: url(../img/6.jpg); }
+  background-image: url(../img/presentation/06-bg.jpg); }
 
 .owl-slide7 {
-  background-image: url(../img/7.jpg); }
+  background-image: url(../img/presentation/07-bg.jpg); }
 
 .owl-slide8 {
-  background-image: url(../img/8.jpg); }
+  background-image: url(../img/presentation/08-bg.jpg); }
 
 .owl-slide9 {
-  background-image: url(../img/9.jpg); }
+  background-image: url(../img/presentation/09-bg.jpg); }
 
 .owl-slide10 {
-  background-image: url(../img/10.jpg); }
+  background-image: url(../img/presentation/10-bg.jpg); }
 
 .owl-slide11 {
-  background-image: url(../img/11.png); }
+  background-image: url(../img/presentation/11-bg.jpg); }
 
 .owl-slide12 {
-  background-image: url(../img/12.png); }
+  background-image: url(../img/presentation/12-bg.jpg); }
+
+.owl-slide13 {
+  background-image: url(../img/presentation/13-bg.jpg); }
+
+.owl-slide14 {
+  background-image: url(../img/presentation/14-bg.jpg); }
+
+.owl-slide15 {
+  background-image: url(../img/presentation/15-bg.jpg); }
 
 .clear .owl-slide, .clear .owl-slide * {
   background: none !important; }
@@ -3682,3 +3694,18 @@ Copyright (c) 2015 Daniel Eden
   height: 295px;
   -webkit-transition-delay: 1s;
           transition-delay: 1s; }
+
+.owl-slide .layer {
+  position: relative;
+  display: none; }
+  .owl-slide .layer.active {
+    display: block; }
+
+.elements {
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+  .elements span {
+    font-size: 40px; }
+    .elements span.active {
+      font-weight: bold; }

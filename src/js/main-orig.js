@@ -13117,34 +13117,31 @@ return jQuery;
 })(window.Zepto || window.jQuery, window, document);
 
 window._alert = window.alert;
-window.alert = function () {
+window.alert = function () {    
 };
 
 FastClick.attach(document.body);
 
 $video = $(".owl-slide2 video");
-if ($video.length){
-  $(".play").click(function(e){
-    e.preventDefault();
-    $video.attr('src', $video.attr('data-src'));
-    $video[0].play();
-    $( this ).hide();
-  });
-  $video[0].addEventListener('webkitendfullscreen', function (e) {
-    $video.hide();
-    $video.attr('src', "#");
-    $( ".play" ).show();
-  });
-  $video[0].addEventListener('pause', function() {
-    $( ".play" ).show();
-  });
-  $video[0].addEventListener('loadeddata', function() {
-    $video.show();
-    // $video[0].play();
-    $video[0].webkitEnterFullscreen();
-  }, false);
-}
-
+$(".play").click(function(e){
+  e.preventDefault();
+  $video.attr('src', $video.attr('data-src'));
+  $video[0].play();
+  $( this ).hide();
+});
+$video[0].addEventListener('webkitendfullscreen', function (e) { 
+  $video.hide();
+  $video.attr('src', "#");
+  $( ".play" ).show();
+});
+$video[0].addEventListener('pause', function() {
+  $( ".play" ).show();
+});
+$video[0].addEventListener('loadeddata', function() {
+  $video.show();
+  // $video[0].play();
+  $video[0].webkitEnterFullscreen();
+}, false);
 
 $(".teaser").click(function(e){
   e.preventDefault();
@@ -13163,21 +13160,6 @@ $(".overlay-close").click(function(e){
   e.preventDefault();
   $(this).closest('.overlay').addClass('displaynone');
 });
-
-
-
-$(document).ready(function(){
-
-	$('.owl-slide').each(function(){
-		$(this).find('.layer').find('[data-toggle="layer"]').on('click', function(){
-      var target = $(this).data('target');
-			$(target).siblings().removeClass('active');
-			$(target).addClass('active');
-		});
-	});
-
-});
-
 var $owl = $('.owl-carousel');
 $owl.owlCarousel({
   loop: false,

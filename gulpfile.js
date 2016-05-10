@@ -26,7 +26,7 @@ gulp.task('generate-html', function() {
 });
 
 gulp.task('sass', function(){
-  return gulp.src('src/sass/default.scss')
+  return gulp.src('./src/sass/{,*/}*.{scss,sass}')
     .pipe( gulpif( isBuild, sourcemaps.init() ) )
     .pipe( sass() )
     .pipe( autoprefixer( {
@@ -59,7 +59,7 @@ gulp.task('scripts', function() {
     .pipe( browserSync.reload( {stream:true} ) )
     // .pipe(notify({ message: 'Scripts task complete' }));
 });
- 
+
 // Images
 gulp.task('images', function() {
   return gulp.src('src/img/**/*')
@@ -68,7 +68,7 @@ gulp.task('images', function() {
     .pipe( browserSync.reload( {stream:true} ) )
     .pipe(notify({ message: 'Images task complete' }));
 });
- 
+
 // Clear cache
 gulp.task('clearCache', function() {
   // Or, just call this for everything

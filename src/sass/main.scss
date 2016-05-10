@@ -1,0 +1,36 @@
+$blue: #133A7F;
+$gray: #CCD3DA;
+$orange: #f07c00;
+$error: #f00000;
+
+@import "reset";
+@import "fonts";
+@import "global";
+@import "owl/owl.carousel";
+@import "owl/animate";
+@import "owl/owl.theme.default";
+@import "select";
+@import "slides2";
+
+
+.owl-slide{
+  .layer{
+    position:relative;
+    display:none;
+    &.active{
+      display:block;
+    }
+  }
+}
+
+.elements{
+  position:absolute;
+  top:0px;
+  left:0px;
+  span{
+    font-size:40px;
+    &.active{
+      font-weight: bold;
+    }
+  }
+}
