@@ -20,6 +20,10 @@ $error: #f00000;
     &.active{
       display:block;
     }
+    >img{
+      width:100%;
+      height:auto;
+    }
   }
 }
 
@@ -52,6 +56,35 @@ $error: #f00000;
         }
         &.btn-2{
           left:835px!important;
+        }
+      }
+    }
+  }
+}
+
+.owl-slide7{
+  .layer{
+    &.layer--1{
+      .elements{
+        .btn{
+          position:absolute;
+          top:85px;
+          display:block;
+          width:100px;
+          height:45px;
+          border:1px solid #ccc;
+          &.btn-1{
+            left:720px!important;
+          }
+          &.btn-2{
+            left:835px!important;
+          }
+          &.btn-3{
+            left:720px!important;
+          }
+          &.btn-4{
+            left:835px!important;
+          }
         }
       }
     }
