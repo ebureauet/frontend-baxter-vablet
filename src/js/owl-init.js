@@ -38,7 +38,7 @@ $owl.on('changed.owl.carousel', function(event) {
 //slide 3 related
 $(".slide-btn-show").click(function(e){
   e.preventDefault();
-  var $slide = $(this).closest(".owl-slide");    
+  var $slide = $(this).closest(".owl-slide");
   $slide.find(".slide-overlay-info").removeClass('visible').addClass('hidden');
   $slide.find(".slide-overlays .slide-overlay-info").eq( $(this).index() ).removeClass('hidden').addClass('visible');
 });
@@ -47,4 +47,10 @@ $(".slide-overlay-info .close").click(function(e){
   var $slide = $(this).closest(".owl-slide");
   $slide.find(".slide-overlay-info").removeClass('visible').addClass('hidden');
   $slide.find(".slide-overlay-init").eq( $(this).index() ).removeClass('hidden').addClass('visible');
+});
+
+
+
+$owl.on('translated.owl.carousel', function(event) {
+  $('.owl-slide .layer').removeClass('active').filter('.layer--01').addClass('active');
 });
