@@ -3253,7 +3253,7 @@ Copyright (c) 2015 Daniel Eden
   background-image: url(../img/presentation/14-bg.jpg); }
 
 .owl-slide15 {
-  background-image: url(../img/presentation/15-bg.jpg); }
+  background-image: url(../img/presentation/15-bg-a.jpg); }
 
 .clear .owl-slide, .clear .owl-slide * {
   background: none !important; }
@@ -3709,3 +3709,15 @@ Copyright (c) 2015 Daniel Eden
     font-size: 40px; }
     .elements span.active {
       font-weight: bold; }
+
+.owl-slide15 .layer .elements .btn {
+  position: absolute;
+  top: 85px;
+  display: block;
+  width: 100px;
+  height: 45px;
+  border: 1px solid #ccc; }
+  .owl-slide15 .layer .elements .btn.btn-1 {
+    left: 720px !important; }
+  .owl-slide15 .layer .elements .btn.btn-2 {
+    left: 835px !important; }

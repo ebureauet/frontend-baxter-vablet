@@ -34,3 +34,26 @@ $error: #f00000;
     }
   }
 }
+
+
+// SLIDE SPECIFIC
+.owl-slide15{
+  .layer{
+    .elements{
+      .btn{
+        position:absolute;
+        top:85px;
+        display:block;
+        width:100px;
+        height:45px;
+        border:1px solid #ccc;
+        &.btn-1{
+          left:720px!important;
+        }
+        &.btn-2{
+          left:835px!important;
+        }
+      }
+    }
+  }
+}
