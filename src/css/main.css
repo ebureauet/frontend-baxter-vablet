@@ -3704,7 +3704,6 @@ Copyright (c) 2015 Daniel Eden
   transition: transform 0.25s, -webkit-transform 0.25s;
   left: 0px !important; }
   .side-menu .btn {
-    left: 240px !important;
     display: none; }
   .side-menu.active {
     -webkit-transform: translateX(0);
@@ -3742,69 +3741,72 @@ Copyright (c) 2015 Daniel Eden
     font-size: 40px; }
     .elements span.active {
       font-weight: bold; }
+  .elements .btn {
+    position: absolute;
+    display: block;
+    min-width: 100px;
+    min-height: 40px;
+    border: 1px solid #ccc; }
 
-.owl-slide15 .layer .elements .btn {
-  position: absolute;
+.slide-references .layer .elements .btn {
   top: 85px;
-  display: block;
   width: 100px;
-  height: 45px;
-  border: 1px solid #ccc; }
-  .owl-slide15 .layer .elements .btn.btn-1 {
+  height: 45px; }
+  .slide-references .layer .elements .btn.btn-1 {
     left: 720px !important; }
-  .owl-slide15 .layer .elements .btn.btn-2 {
+  .slide-references .layer .elements .btn.btn-2 {
     left: 835px !important; }
 
-.owl-slide7 .layer .elements .btn {
-  position: absolute;
-  display: block;
-  border: 1px solid #ccc; }
+.slide-case-clinical-environment .layer .elements .btn {
+  top: 85px;
+  width: 100px;
+  height: 45px; }
 
-.owl-slide7 .layer.layer--01 .elements .btn {
+.slide-clinic-challenges .layer.layer--01 .elements .btn {
   top: 85px;
   width: 140px;
   height: 40px; }
-  .owl-slide7 .layer.layer--01 .elements .btn.btn-1 {
+  .slide-clinic-challenges .layer.layer--01 .elements .btn.btn-1 {
     left: 225px !important;
     top: 345px; }
-  .owl-slide7 .layer.layer--01 .elements .btn.btn-2 {
+  .slide-clinic-challenges .layer.layer--01 .elements .btn.btn-2 {
     left: 225px !important;
     top: 655px; }
-  .owl-slide7 .layer.layer--01 .elements .btn.btn-3 {
+  .slide-clinic-challenges .layer.layer--01 .elements .btn.btn-3 {
     left: 660px !important;
     top: 345px; }
-  .owl-slide7 .layer.layer--01 .elements .btn.btn-4 {
+  .slide-clinic-challenges .layer.layer--01 .elements .btn.btn-4 {
     left: 660px !important;
     top: 655px; }
 
-.owl-slide7 .layer.layer--02 .elements .btn {
+.slide-clinic-challenges .layer.layer--02 .elements .btn {
   top: 85px;
   width: 100px;
   height: 40px; }
-  .owl-slide7 .layer.layer--02 .elements .btn.btn-x {
+  .slide-clinic-challenges .layer.layer--02 .elements .btn.btn-x {
     left: 460px !important;
     top: 645px; }
 
-.owl-slide7 .layer.layer--03 .elements .btn {
+.slide-clinic-challenges .layer.layer--03 .elements .btn {
   top: 85px;
   width: 100px;
   height: 40px; }
-  .owl-slide7 .layer.layer--03 .elements .btn.btn-x {
+  .slide-clinic-challenges .layer.layer--03 .elements .btn.btn-x {
     left: 460px !important;
     top: 645px; }
 
-.owl-slide7 .layer.layer--04 .elements .btn {
+.slide-clinic-challenges .layer.layer--04 .elements .btn {
   top: 85px;
   width: 100px;
   height: 40px; }
-  .owl-slide7 .layer.layer--04 .elements .btn.btn-x {
+  .slide-clinic-challenges .layer.layer--04 .elements .btn.btn-x {
     left: 460px !important;
     top: 645px; }
 
-.owl-slide7 .layer.layer--05 .elements .btn {
+.slide-clinic-challenges .layer.layer--05 .elements .btn {
   top: 85px;
   width: 100px;
   height: 40px; }
-  .owl-slide7 .layer.layer--05 .elements .btn.btn-x {
+  .slide-clinic-challenges .layer.layer--05 .elements .btn.btn-x {
     left: 460px !important;
     top: 645px; }

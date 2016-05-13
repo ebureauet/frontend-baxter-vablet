@@ -45,17 +45,3 @@ $(".overlay-close").click(function(e){
   e.preventDefault();
   $(this).closest('.overlay').addClass('displaynone');
 });
-
-
-
-$(document).ready(function(){
-
-	$('.owl-slide').each(function(){
-		$(this).find('.layer').find('[data-toggle="layer"]').on('click', function(){
-      var target = $(this).data('target');
-			$(target).siblings().removeClass('active');
-			$(target).addClass('active');
-		});
-	});
-
-});

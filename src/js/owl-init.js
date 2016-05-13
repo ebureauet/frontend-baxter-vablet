@@ -4,7 +4,6 @@ $owl.owlCarousel({
   margin: 0,
   nav: false,
   items: 1,
-  dots: false,
   touchDrag: true
 });
 
@@ -13,6 +12,14 @@ var $owlitem = $(".owl-item");
 var $slideNav = $(".slide-nav");
 var $teaser = $(".teaser");
 var $overlay = $(".overlay");
+
+$('[data-toggle="slideTo"]').on('click',function(e){
+
+  var target = $(this).data('target');
+  var targetPos = $(target).parent().index();
+  $('.slide-nav').find('.slide-thumb').filter(':eq('+targetPos+')').trigger('click');
+  console.log($('.slide-nav').find('.slide-thumb').filter(':eq('+targetPos+')'))
+});
 
 $owl.on('changed.owl.carousel', function(event) {
   //update side nav
@@ -34,6 +41,9 @@ $owl.on('changed.owl.carousel', function(event) {
   $overlay.addClass('displaynone');
   $owlitem.removeClass('post-teaser-active');
 });
+
+
+
 
 //slide 3 related
 $(".slide-btn-show").click(function(e){

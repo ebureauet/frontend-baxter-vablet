@@ -67,14 +67,34 @@ $( ".btn-contact" ).click( function( e ) {
 });
 
 function closeSideMenu() {
-  $(".btn").animate({
-    left: 195
-  }, {
-    duration: 100,
-    complete: function() {
-      $(".side-menu").animate({ left: -240 }, 200);
-      $(".btn-menu").fadeIn(100);
-      $(".overlay-menu").fadeOut(100);
-    }
-  });
+  sideNav.removeClass("active");
 }
+
+
+
+
+
+  $('.owl-slide').each(function(){
+  	$(this).find('.layer').find('[data-toggle="layer"]').on('click', function(){
+      var target = $(this).data('target');
+  		$(target).siblings().removeClass('active');
+  		$(target).addClass('active');
+  	});
+
+  });
+
+
+  function btnPositions(){
+    $('.btn[data-pos]').each(function(){
+      var pos = $(this).data("pos").split(",");
+      var size = $(this).data("size").split(",");
+      $(this).css({
+        "left" : parseInt(pos[0]),
+        "top" : parseInt(pos[1]),
+        "width" : parseInt(size[0]),
+        "height" : parseInt(size[1])
+      });
+    });
+  }
+
+  btnPositions();

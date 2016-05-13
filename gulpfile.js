@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     data = require('gulp-data'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
+    fileinclude = require('gulp-file-include'),
     imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache'),
     notify = require('gulp-notify'),
@@ -18,6 +19,15 @@ var gulp = require('gulp'),
     zip = require('gulp-zip');
 
 var isBuild = false;
+var notifyError = function(err, lang) {
+  console.log(err);
+  notify.onError({
+    title: lang + " error",
+    // subtitle: "Error!",
+    message: "Check console",
+    sound: "Basso"
+  })(err);
+};
 
 gulp.task('generate-html', function() {
   return gulp.src('src/index.html')
@@ -37,6 +47,19 @@ gulp.task('sass', function(){
     .pipe( gulp.dest('src/css') )
     .pipe( browserSync.reload( {stream:true} ) )
     // .pipe(notify({ message: 'Sass task complete' }));
+});
+
+gulp.task('html', function() {
+  return gulp.src('src/html/pages/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file',
+    }))
+    .on("error", function(err) {
+      notifyError(err, "HTML")
+    })
+   .pipe(gulp.dest('src/'));
+   //.pipe(reload({stream:true}));
 });
 
 gulp.task('scripts', function() {
@@ -86,7 +109,7 @@ gulp.task('zip', ['copy'], function () {
       .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('copy', ['sass', 'scripts'], function() {
+gulp.task('copy', ['sass', 'html', 'scripts'], function() {
   del.sync(['dist/**'], function (err, paths) {
     console.log('Deleted files/folders:\n', paths.join('\n'));
   });
@@ -105,10 +128,11 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('default', ['sass', 'scripts', 'browser-sync'], function () {
+gulp.task('default', ['sass', 'html', 'scripts', 'browser-sync'], function () {
+  gulp.watch("src/html/**/*.html", ['html']);
   gulp.watch("src/sass/**/*.scss", ['sass']);
   gulp.watch("src/js/**/*.js", ['scripts']);
   gulp.watch("src/**/*.html", browserSync.reload);
 });
 
-gulp.task('dist', ['sass', 'scripts', 'copy', 'zip'], function(){});
+gulp.task('dist', ['sass', 'html', 'scripts', 'copy', 'zip'], function(){});

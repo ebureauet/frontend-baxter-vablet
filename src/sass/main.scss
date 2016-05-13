@@ -18,7 +18,6 @@ $error: #f00000;
   transition: transform 0.25s;
   left:0px!important;
   .btn{
-    left: 240px!important;
     display:none;
   }
   &.active{
@@ -69,20 +68,24 @@ $error: #f00000;
       font-weight: bold;
     }
   }
+  .btn{
+    position:absolute;
+    display:block;
+    min-width:100px;
+    min-height:40px;
+    border:1px solid #ccc;
+  }
 }
 
 
 // SLIDE SPECIFIC
-.owl-slide15{
+.slide-references{
   .layer{
     .elements{
       .btn{
-        position:absolute;
         top:85px;
-        display:block;
         width:100px;
         height:45px;
-        border:1px solid #ccc;
         &.btn-1{
           left:720px!important;
         }
@@ -94,15 +97,26 @@ $error: #f00000;
   }
 }
 
-.owl-slide7{
+.slide-case-clinical-environment{
   .layer{
     .elements{
       .btn{
-        position:absolute;
-        display:block;
-        border:1px solid #ccc;
+        top:85px;
+        width:100px;
+        height:45px;
+        &.btn-1{
+          //left:720px!important;
+        }
+        &.btn-2{
+          //left:835px!important;
+        }
       }
     }
+  }
+}
+
+.slide-clinic-challenges{
+  .layer{
     &.layer--01{
       .elements{
         .btn{
