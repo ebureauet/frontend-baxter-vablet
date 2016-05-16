@@ -98,3 +98,13 @@ function closeSideMenu() {
   }
 
   btnPositions();
+
+
+
+  $('.flipcard').on('click', function(e){
+    $(this).toggleClass('flipcard--flipped');
+  })
+
+  $('.flipcard .btn-cta').on('click', function(e){
+    e.stopPropagation();
+  });

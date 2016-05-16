@@ -40,7 +40,7 @@ gulp.task('sass', function(){
     .pipe( gulpif( isBuild, sourcemaps.init() ) )
     .pipe( sass() )
     .pipe( autoprefixer( {
-      browsers: ['last 4 Chrome versions', 'iOS > 5'],
+      browsers: ['ie 9', 'last 4 Chrome versions', 'iOS > 5'],
       cascade: true
     }))
     .pipe( gulpif( isBuild, sourcemaps.write() ) )
@@ -129,10 +129,9 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('default', ['sass', 'html', 'scripts', 'browser-sync'], function () {
-  gulp.watch("src/html/**/*.html", ['html']);
   gulp.watch("src/sass/**/*.scss", ['sass']);
   gulp.watch("src/js/**/*.js", ['scripts']);
-  gulp.watch("src/**/*.html", browserSync.reload);
+  gulp.watch("src/**/*.html", ['html', browserSync.reload]);
 });
 
 gulp.task('dist', ['sass', 'html', 'scripts', 'copy', 'zip'], function(){});

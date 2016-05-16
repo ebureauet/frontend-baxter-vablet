@@ -128,15 +128,15 @@ span {
     .side-menu .btn.btn-close {
       background-image: url(../img/btn-close.png);
       top: 0;
-      left: 195px; }
+      left: 100%; }
     .side-menu .btn.btn-home {
       background-image: url(../img/btn-home.jpg);
       top: 45px;
-      left: 195px; }
+      left: 100%; }
     .side-menu .btn.btn-contact {
       background-image: url(../img/btn-contact.jpg);
       top: 90px;
-      left: 195px; }
+      left: 100%; }
   .side-menu .slide-nav {
     height: 768px;
     overflow-y: auto;
@@ -285,6 +285,7 @@ input[type="submit"] {
     line-height: 0;
     position: absolute;
     -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     top: 21px; }
 
@@ -433,7 +434,8 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: bounce;
   animation-name: bounce;
   -webkit-transform-origin: center bottom;
-  transform-origin: center bottom; }
+  -ms-transform-origin: center bottom;
+      transform-origin: center bottom; }
 
 @-webkit-keyframes flash {
   0%, 50%, 100% {
@@ -590,7 +592,8 @@ Copyright (c) 2015 Daniel Eden
 
 .swing {
   -webkit-transform-origin: top center;
-  transform-origin: top center;
+  -ms-transform-origin: top center;
+      transform-origin: top center;
   -webkit-animation-name: swing;
   animation-name: swing; }
 

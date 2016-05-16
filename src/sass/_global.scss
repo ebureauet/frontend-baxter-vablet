@@ -13,10 +13,10 @@ html, body {
 
 body {
   color: #FFF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.4; 
+  line-height: 1.4;
 }
 
 span { color: $orange;  }
@@ -33,7 +33,7 @@ span { color: $orange;  }
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .side-menu {
@@ -49,8 +49,8 @@ span { color: $orange;  }
     position: absolute;
     top: 704px;
   }
-  img { 
-    width: 100%; 
+  img {
+    width: 100%;
   }
   .btn {
     background-size: 45px 45px;
@@ -62,17 +62,17 @@ span { color: $orange;  }
     &.btn-close {
       background-image: url(../img/btn-close.png);
       top: 0;
-      left: 195px;
+      left: 100%;
     }
     &.btn-home {
       background-image: url(../img/btn-home.jpg);
-      top: 45px; 
-      left: 195px;
+      top: 45px;
+      left: 100%;
     }
     &.btn-contact {
       background-image: url(../img/btn-contact.jpg);
-      top: 90px; 
-      left: 195px;
+      top: 90px;
+      left: 100%;
     }
   }
   .slide-nav {
@@ -82,11 +82,11 @@ span { color: $orange;  }
     padding-bottom: 64px;
     position: relative;
     width: 240px;
-    
+
     img { float: left; }
-    div { 
+    div {
       float: left;
-      position: relative; 
+      position: relative;
 
       &:before {
         background: #fff;
@@ -106,9 +106,9 @@ span { color: $orange;  }
         &:nth-of-type(#{$i}):before { content: '#{$i}'; }
       }
     }
-    .active:after { 
+    .active:after {
       background: rgba(#c56702, 0.4);
-      border: solid 10px #849ebb; 
+      border: solid 10px #849ebb;
       content: ' ';
       display: block;
       height: 100%;
@@ -139,7 +139,7 @@ input[type='text'], input[type='email'] {
   margin-bottom: 15px;
   text-align: center;
   width: 100%;
-  
+
   &.error {
     border: solid 3px $error;
   }
@@ -157,7 +157,7 @@ select {
   font-size: 27px;
   margin-bottom: 25px;
   width: 100%;
-  
+
   &.error { border: solid 2px $error; }
 }
 input[type="submit"] {
@@ -177,8 +177,8 @@ input[type="submit"] {
   min-height: 40px;
   padding-left: 45px;
   position: relative;
-  
-  input[type="checkbox"] { 
+
+  input[type="checkbox"] {
     left: 0;
     position: absolute;
     top: 0;
@@ -188,15 +188,15 @@ input[type="submit"] {
     display: block;
     position: relative;
     font-family: "Helvetica Neue Light";
-    
+
     &:before {
-      border: solid 2px #fff; 
+      border: solid 2px #fff;
       border-radius: 5px;
       content: ' ';
       height: 30px;
-      left: -45px; 
+      left: -45px;
       position: absolute;
-      top: 5px; 
+      top: 5px;
       width: 30px;
     }
 
@@ -204,7 +204,7 @@ input[type="submit"] {
       &:before { border: solid 2px $error; }
     }
   }
-  input[type="checkbox"]:checked + label { 
+  input[type="checkbox"]:checked + label {
     &:after {
       content: '+';
       font-size: 40px;

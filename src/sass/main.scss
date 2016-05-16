@@ -4,6 +4,7 @@ $orange: #f07c00;
 $error: #f00000;
 
 @import "reset";
+@import "mixins/gradient";
 @import "fonts";
 @import "global";
 @import "owl/owl.carousel";
@@ -120,25 +121,7 @@ $error: #f00000;
     &.layer--01{
       .elements{
         .btn{
-          top:85px;
-          width:140px;
-          height:40px;
-          &.btn-1{
-            left: 225px !important;
-            top: 345px;
-          }
-          &.btn-2{
-            left: 225px !important;
-            top: 655px;
-          }
-          &.btn-3{
-            left: 660px!important;
-            top: 345px;
-          }
-          &.btn-4{
-            left:660px!important;
-            top: 655px;
-          }
+
         }
       }
     }
@@ -194,5 +177,120 @@ $error: #f00000;
         }
       }
     }
+  }
+}
+
+
+
+.flipcard{
+  width:100%;
+  height:100%;
+  font-size:25px;
+  >div{
+    position:relative;
+    display:block;
+    border-radius:10px;
+    //overflow:hidden;
+    height:100%;
+    .texts{
+      position: absolute;
+      text-align: center;
+      //padding:50px;
+      top:50%;
+      transform:translateY(-50%);
+      width: 100%;
+      p{
+        margin-bottom:0.6em;
+        &:last-child{
+          margin-bottom:0;
+        }
+      }
+    }
+    .btn-cta{
+      position: absolute;
+      bottom:0px;
+      left:50%;
+      transform: translate(-50%,50%);
+      font-size:22px;
+      line-height:40px;
+      padding:0px 30px;
+      border-radius:5px;
+      $gradientBg : (
+        0% : #EEAA00,
+        100% : #FA8400
+      );
+      @include gradient(90deg, $gradientBg);
+      .btn-cta-c-orange{
+        $gradientBg : (
+          0% : #EEAA00,
+          100% : #FA8400
+        );
+        @include gradient(0deg, $gradientBg);
+      }
+    }
+  }
+  .front{
+    &.grd{
+      $gradientBg : (
+        0% : #426190,
+        100% : #839DB9
+      );
+      @include gradient(215deg, $gradientBg);
+      &.grd--tl{
+        @include gradient(215deg, $gradientBg);
+      }
+      &.grd--tr{
+        @include gradient(315deg, $gradientBg);
+      }
+      &.grd--bl{
+        @include gradient(135deg, $gradientBg);
+      }
+      &.grd--br{
+        @include gradient(45deg, $gradientBg);
+      }
+    }
+    border:2px solid #C6CFD4;
+  }
+  .back{
+    display:none;
+    &.grd{
+      $gradientBg : (
+        0% : #031C5C,
+        100% : #284D91
+      );
+      @include gradient(215deg, $gradientBg);
+      &.grd--tl{
+        @include gradient(215deg, $gradientBg);
+      }
+      &.grd--tr{
+        @include gradient(315deg, $gradientBg);
+      }
+      &.grd--bl{
+        @include gradient(135deg, $gradientBg);
+      }
+      &.grd--br{
+        @include gradient(45deg, $gradientBg);
+      }
+    }
+    border:2px solid #809AB9;
+  }
+  &.flipcard--flipped{
+    .front{
+      display:none;
+    }
+    .back{
+      display:block;
+    }
+  }
+}
+
+.prop{
+  position:absolute;
+  top:0;
+  left:0;
+  &.prop-center{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
   }
 }
