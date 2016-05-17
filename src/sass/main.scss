@@ -5,6 +5,7 @@ $error: #f00000;
 
 @import "reset";
 @import "mixins/gradient";
+@import "anim";
 @import "fonts";
 @import "global";
 @import "owl/owl.carousel";
@@ -49,8 +50,12 @@ $error: #f00000;
   .layer{
     position:relative;
     display:none;
+    width:100%;
+    height:100%;
     &.active{
       display:block;
+      @extend %animated;
+      @extend %fadeIn;
     }
     >img{
       width:100%;
@@ -63,6 +68,8 @@ $error: #f00000;
   position:absolute;
   top:0px;
   left:0px;
+  width:100%;
+  height:100%;
   span{
     font-size:40px;
     &.active{
@@ -292,5 +299,8 @@ $error: #f00000;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    img{
+      position:relative;
+    }
   }
 }

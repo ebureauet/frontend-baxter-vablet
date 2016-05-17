@@ -45,6 +45,40 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.owl-slide .layer.active {
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+.owl-slide .infinite.layer.active {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.owl-slide .layer.active {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn; }
+
+@keyframes zoomInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }
+
 @font-face {
   font-family: "Helvetica Neue";
   src: url("../fonts/HelveticaNeueLTPro-Cn.eot");
@@ -3731,7 +3765,9 @@ Copyright (c) 2015 Daniel Eden
 
 .owl-slide .layer {
   position: relative;
-  display: none; }
+  display: none;
+  width: 100%;
+  height: 100%; }
   .owl-slide .layer.active {
     display: block; }
   .owl-slide .layer > img {
@@ -3741,7 +3777,9 @@ Copyright (c) 2015 Daniel Eden
 .elements {
   position: absolute;
   top: 0px;
-  left: 0px; }
+  left: 0px;
+  width: 100%;
+  height: 100%; }
   .elements span {
     font-size: 40px; }
     .elements span.active {
@@ -4018,3 +4056,5 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+    .prop.prop-center img {
+      position: relative; }
