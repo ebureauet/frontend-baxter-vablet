@@ -36,7 +36,7 @@ gulp.task('generate-html', function() {
 });
 
 gulp.task('sass', function(){
-  return gulp.src('./src/sass/{,*/}*.{scss,sass}')
+  return gulp.src('./src/sass/*.{scss,sass}')
     .pipe( gulpif( isBuild, sourcemaps.init() ) )
     .pipe( sass() )
     .pipe( autoprefixer( {

@@ -19,12 +19,12 @@ $error: #f00000;
   transform: translateX(-100%);
   transition: transform 0.25s;
   left:0px!important;
-  .btn{
+  .sidebtn{
     display:none;
   }
   &.active{
     transform: translateX(0);
-    .btn{
+    .sidebtn{
       display:block;
     }
   }
@@ -39,7 +39,7 @@ $error: #f00000;
   }
 }
 
-.btn-menu{
+.menu{
   display:block;
   &.active{
     display:none;
@@ -64,6 +64,23 @@ $error: #f00000;
   }
 }
 
+
+.btn, .btn-front{
+  position:absolute;
+  display:block;
+  min-width:100px;
+  min-height:40px;
+  border:1px solid #ccc;
+}
+
+.btn-front{
+  z-index:10;
+}
+
+.btn[data-toggle="slideTo"]{
+  display:none!important;
+}
+
 .elements{
   position:absolute;
   top:0px;
@@ -76,117 +93,7 @@ $error: #f00000;
       font-weight: bold;
     }
   }
-  .btn{
-    position:absolute;
-    display:block;
-    min-width:100px;
-    min-height:40px;
-    border:1px solid #ccc;
-  }
 }
-
-
-// SLIDE SPECIFIC
-.slide-references{
-  .layer{
-    .elements{
-      .btn{
-        top:85px;
-        width:100px;
-        height:45px;
-        &.btn-1{
-          left:720px!important;
-        }
-        &.btn-2{
-          left:835px!important;
-        }
-      }
-    }
-  }
-}
-
-.slide-case-clinical-environment{
-  .layer{
-    .elements{
-      .btn{
-        top:85px;
-        width:100px;
-        height:45px;
-        &.btn-1{
-          //left:720px!important;
-        }
-        &.btn-2{
-          //left:835px!important;
-        }
-      }
-    }
-  }
-}
-
-.slide-clinic-challenges{
-  .layer{
-    &.layer--01{
-      .elements{
-        .btn{
-
-        }
-      }
-    }
-    &.layer--02{
-      .elements{
-        .btn{
-          top:85px;
-          width:100px;
-          height:40px;
-          &.btn-x{
-            left:460px!important;
-            top: 645px;
-          }
-        }
-      }
-    }
-    &.layer--03{
-      .elements{
-        .btn{
-          top:85px;
-          width:100px;
-          height:40px;
-          &.btn-x{
-            left:460px!important;
-            top: 645px;
-          }
-        }
-      }
-    }
-    &.layer--04{
-      .elements{
-        .btn{
-          top:85px;
-          width:100px;
-          height:40px;
-          &.btn-x{
-            left:460px!important;
-            top: 645px;
-          }
-        }
-      }
-    }
-    &.layer--05{
-      .elements{
-        .btn{
-          top:85px;
-          width:100px;
-          height:40px;
-          &.btn-x{
-            left:460px!important;
-            top: 645px;
-          }
-        }
-      }
-    }
-  }
-}
-
 
 
 .flipcard{

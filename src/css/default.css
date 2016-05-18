@@ -87,6 +87,9 @@ body {
 span {
   color: #f07c00; }
 
+.app {
+  position: relative; }
+
 .hidden {
   opacity: 0 !important; }
 
@@ -119,24 +122,25 @@ span {
     top: 704px; }
   .side-menu img {
     width: 100%; }
-  .side-menu .btn {
+  .side-menu .sidebtn {
     background-size: 45px 45px;
     height: 45px;
     position: absolute;
     width: 45px;
     background-repeat: no-repeat; }
-    .side-menu .btn.btn-close {
+    .side-menu .sidebtn.sidebtn-close {
       background-image: url(../img/btn-close.png);
       top: 0;
       left: 100%; }
-    .side-menu .btn.btn-home {
+    .side-menu .sidebtn.sidebtn-home {
       background-image: url(../img/btn-home.jpg);
       top: 45px;
       left: 100%; }
-    .side-menu .btn.btn-contact {
+    .side-menu .sidebtn.sidebtn-contact {
       background-image: url(../img/btn-contact.jpg);
       top: 90px;
-      left: 100%; }
+      left: 100%;
+      display: none !important; }
   .side-menu .slide-nav {
     height: 768px;
     overflow-y: auto;
@@ -197,7 +201,7 @@ span {
       top: 0;
       width: 100%; }
 
-.btn-menu {
+.menu {
   background: url(../img/btn-menu.png) no-repeat;
   background-size: 45px 45px;
   display: block;

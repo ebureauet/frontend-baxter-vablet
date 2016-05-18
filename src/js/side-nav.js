@@ -42,13 +42,13 @@ function closeSideMenu() {
   });
 }
 */
-var sideNav = $(".side-menu, .overlay-menu, .btn-menu");
+var sideNav = $(".side-menu, .overlay-menu, .menu");
 
-$(".btn-menu").on('click',function(e) {
+$(".menu").on('click',function(e) {
   sideNav.toggleClass("active");
 });
 
-$(".btn-close").on("click",function(e) {
+$(".sidebtn-close").on("click",function(e) {
   sideNav.toggleClass("active");
 });
 
@@ -57,11 +57,11 @@ $(".slide-nav div").click(function(e) {
   closeSideMenu();
 });
 
-$( ".btn-home" ).click( function( e ) {
+$( ".sidebtn-home" ).click( function( e ) {
   $owl.trigger( 'to.owl.carousel', [0, 200, true] );
 closeSideMenu();
 });
-$( ".btn-contact" ).click( function( e ) {
+$( ".sidebtn-contact" ).click( function( e ) {
   $owl.trigger( 'to.owl.carousel', [11, 200, true] );
   closeSideMenu();
 });
@@ -74,14 +74,7 @@ function closeSideMenu() {
 
 
 
-  $('.owl-slide').each(function(){
-  	$(this).find('.layer').find('[data-toggle="layer"]').on('click', function(){
-      var target = $(this).data('target');
-  		$(target).siblings().removeClass('active');
-  		$(target).addClass('active');
-  	});
 
-  });
 
 
   function btnPositions(){

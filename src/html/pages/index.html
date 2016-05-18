@@ -8,107 +8,113 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="btn-menu"></div>
-  <div class="overlay-menu"></div>
-  <div class="side-menu">
-    <div class="btn btn-close"></div>
-    <div class="btn btn-home"></div>
-    <div class="btn btn-contact"></div>
-    <div class="slide-nav">
-      <div class="slide-thumb active"><img src="img/presentation/thumbs/00 Brand Story.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/01 Home.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/02 Intro.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/03 Case - Clinical environment.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/04 Case - Clinical operation.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/06A Clinic Challenges.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/08-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/09-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/10-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/11-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/12-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/13-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/14-bg.jpg"></div>
-      <div class="slide-thumb"><img src="img/presentation/thumbs/15-bg.jpg"></div>
+  <div class="app">
+
+    <div class="menu"></div>
+    <div class="overlay-menu"></div>
+    <div class="side-menu">
+      <div class="sidebtn sidebtn-close"></div>
+      <div class="sidebtn sidebtn-home"></div>
+      <div class="sidebtn sidebtn-contact"></div>
+      <div class="slide-nav">
+        <div class="slide-thumb active"><img src="img/presentation/thumbs/00 Brand Story.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/01 Home.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/02 Intro.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/03 Case - Clinical environment.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/04 Case - Clinical operation.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/06A Clinic Challenges.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/08-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/09-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/10-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/11-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/12-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/13-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/14-bg.jpg"></div>
+        <div class="slide-thumb"><img src="img/presentation/thumbs/15-bg.jpg"></div>
+      </div>
+      <img class="logo" src="img/logo-baxter.png">
     </div>
-    <img class="logo" src="img/logo-baxter.png">
+    <div class="owl-carousel">
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-brand-story",
+        "htmlContent" : "slide-brand-story.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-home",
+        "htmlContent" : "slide-home.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-intro",
+        "htmlContent" : "slide-intro.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-case-clinical-environment",
+        "htmlContent" : "slide-case-clinical-environment.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-case-clinical-operations",
+        "htmlContent" : "slide-case-clinical-operations.html"
+      })
+
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-clinic-challenges",
+        "htmlContent" : "slide-clinic-challenges.html"
+      })
+
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-total-solutions",
+        "htmlContent" : "slide-total-solutions.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-solution-cwp-800",
+        "htmlContent" : "slide-solution-cwp-800.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-solution-softpac-citrate",
+        "htmlContent" : "slide-solution-softpac-citrate.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-solution-bicart-cartridge",
+        "htmlContent" : "slide-solution-bicart-cartridge.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-solution-monitors",
+        "htmlContent" : "slide-solution-monitors.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-solution-cleancart",
+        "htmlContent" : "slide-solution-cleancart.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-solution-ultrafilter",
+        "htmlContent" : "slide-solution-ultrafilter.html"
+      })
+
+      @@include('../templates/partials/slide.html',{
+        "addClass" : "slide-references",
+        "htmlContent" : "slide-references.html"
+      })
+
+
+
+    </div>
+
   </div>
-  <div class="owl-carousel">
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-brand-story",
-      "htmlContent" : "slide-brand-story.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-home",
-      "htmlContent" : "slide-home.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-intro",
-      "htmlContent" : "slide-intro.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-case-clinical-environment",
-      "htmlContent" : "slide-case-clinical-environment.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-case-clinical-operations",
-      "htmlContent" : "slide-case-clinical-operations.html"
-    })
 
 
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-clinic-challenges",
-      "htmlContent" : "slide-clinic-challenges.html"
-    })
-
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-total-solutions",
-      "htmlContent" : "slide-total-solutions.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-solution-cwp-800",
-      "htmlContent" : "slide-solution-cwp-800.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-solution-softpac-citrate",
-      "htmlContent" : "slide-solution-softpac-citrate.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-solution-bicart-cartridge",
-      "htmlContent" : "slide-solution-bicart-cartridge.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-solution-monitors",
-      "htmlContent" : "slide-solution-monitors.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-solution-cleancart",
-      "htmlContent" : "slide-solution-cleancart.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-solution-ultrafilter",
-      "htmlContent" : "slide-solution-ultrafilter.html"
-    })
-
-    @@include('../templates/partials/slide.html',{
-      "addClass" : "slide-references",
-      "htmlContent" : "slide-references.html"
-    })
-
-
-
-  </div>
   <script src="js/main.js"></script>
 </body>
 </html>
