@@ -101,3 +101,15 @@ function closeSideMenu() {
   $('.flipcard .btn-cta').on('click', function(e){
     e.stopPropagation();
   });
+
+
+
+  // specific slide event
+  $('.slide-clinic-challenges .prop-center').fadeOut('200');
+  $('.slide-clinic-challenges .flipcard').on('click', function(e){
+    if ($('.slide-clinic-challenges').find('.flipcard--flipped').length == 0){
+      $('.slide-clinic-challenges .prop-center').fadeOut('200');
+    }else{
+      $('.slide-clinic-challenges .prop-center').fadeIn('200');
+    }
+  })
