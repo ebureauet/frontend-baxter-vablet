@@ -21,6 +21,12 @@ body {
 
 span { color: $orange;  }
 
+
+.app{
+  position:relative;
+}
+
+
 .hidden { opacity: 0 !important; }
 .visible { opacity: 1 !important; }
 .displaynone { display: none; }
@@ -52,27 +58,28 @@ span { color: $orange;  }
   img {
     width: 100%;
   }
-  .btn {
+  .sidebtn {
     background-size: 45px 45px;
     height: 45px;
     position: absolute;
     width: 45px;
     background-repeat: no-repeat;
 
-    &.btn-close {
+    &.sidebtn-close {
       background-image: url(../img/btn-close.png);
       top: 0;
       left: 100%;
     }
-    &.btn-home {
+    &.sidebtn-home {
       background-image: url(../img/btn-home.jpg);
       top: 45px;
       left: 100%;
     }
-    &.btn-contact {
+    &.sidebtn-contact {
       background-image: url(../img/btn-contact.jpg);
       top: 90px;
       left: 100%;
+      display:none!important;
     }
   }
   .slide-nav {
@@ -102,7 +109,7 @@ span { color: $orange;  }
         text-align: center;
         width: 30px;
       }
-      @for $i from 1 to 13 {
+      @for $i from 1 to 14 {
         &:nth-of-type(#{$i}):before { content: '#{$i}'; }
       }
     }
@@ -119,7 +126,7 @@ span { color: $orange;  }
     }
   }
 }
-.btn-menu {
+.menu {
   background: url(../img/btn-menu.png) no-repeat;
   background-size: 45px 45px;
   display: block;

@@ -121,6 +121,9 @@ body {
 span {
   color: #f07c00; }
 
+.app {
+  position: relative; }
+
 .hidden {
   opacity: 0 !important; }
 
@@ -153,24 +156,25 @@ span {
     top: 704px; }
   .side-menu img {
     width: 100%; }
-  .side-menu .btn {
+  .side-menu .sidebtn {
     background-size: 45px 45px;
     height: 45px;
     position: absolute;
     width: 45px;
     background-repeat: no-repeat; }
-    .side-menu .btn.btn-close {
+    .side-menu .sidebtn.sidebtn-close {
       background-image: url(../img/btn-close.png);
       top: 0;
       left: 100%; }
-    .side-menu .btn.btn-home {
+    .side-menu .sidebtn.sidebtn-home {
       background-image: url(../img/btn-home.jpg);
       top: 45px;
       left: 100%; }
-    .side-menu .btn.btn-contact {
+    .side-menu .sidebtn.sidebtn-contact {
       background-image: url(../img/btn-contact.jpg);
       top: 90px;
-      left: 100%; }
+      left: 100%;
+      display: none !important; }
   .side-menu .slide-nav {
     height: 768px;
     overflow-y: auto;
@@ -220,6 +224,8 @@ span {
         content: "11"; }
       .side-menu .slide-nav div:nth-of-type(12):before {
         content: "12"; }
+      .side-menu .slide-nav div:nth-of-type(13):before {
+        content: "13"; }
     .side-menu .slide-nav .active:after {
       background: rgba(197, 103, 2, 0.4);
       border: solid 10px #849ebb;
@@ -231,7 +237,7 @@ span {
       top: 0;
       width: 100%; }
 
-.btn-menu {
+.menu {
   background: url(../img/btn-menu.png) no-repeat;
   background-size: 45px 45px;
   display: block;
@@ -3741,13 +3747,13 @@ Copyright (c) 2015 Daniel Eden
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
   left: 0px !important; }
-  .side-menu .btn {
+  .side-menu .sidebtn {
     display: none; }
   .side-menu.active {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0); }
-    .side-menu.active .btn {
+    .side-menu.active .sidebtn {
       display: block; }
 
 .overlay-menu {
@@ -3758,9 +3764,9 @@ Copyright (c) 2015 Daniel Eden
     opacity: 1;
     display: block !important; }
 
-.btn-menu {
+.menu {
   display: block; }
-  .btn-menu.active {
+  .menu.active {
     display: none; }
 
 .owl-slide .layer {
@@ -3774,6 +3780,19 @@ Copyright (c) 2015 Daniel Eden
     width: 100%;
     height: auto; }
 
+.btn, .btn-front {
+  position: absolute;
+  display: block;
+  min-width: 100px;
+  min-height: 40px;
+  border: 1px solid #ccc; }
+
+.btn-front {
+  z-index: 10; }
+
+.btn[data-toggle="slideTo"] {
+  display: none !important; }
+
 .elements {
   position: absolute;
   top: 0px;
@@ -3784,58 +3803,6 @@ Copyright (c) 2015 Daniel Eden
     font-size: 40px; }
     .elements span.active {
       font-weight: bold; }
-  .elements .btn {
-    position: absolute;
-    display: block;
-    min-width: 100px;
-    min-height: 40px;
-    border: 1px solid #ccc; }
-
-.slide-references .layer .elements .btn {
-  top: 85px;
-  width: 100px;
-  height: 45px; }
-  .slide-references .layer .elements .btn.btn-1 {
-    left: 720px !important; }
-  .slide-references .layer .elements .btn.btn-2 {
-    left: 835px !important; }
-
-.slide-case-clinical-environment .layer .elements .btn {
-  top: 85px;
-  width: 100px;
-  height: 45px; }
-
-.slide-clinic-challenges .layer.layer--02 .elements .btn {
-  top: 85px;
-  width: 100px;
-  height: 40px; }
-  .slide-clinic-challenges .layer.layer--02 .elements .btn.btn-x {
-    left: 460px !important;
-    top: 645px; }
-
-.slide-clinic-challenges .layer.layer--03 .elements .btn {
-  top: 85px;
-  width: 100px;
-  height: 40px; }
-  .slide-clinic-challenges .layer.layer--03 .elements .btn.btn-x {
-    left: 460px !important;
-    top: 645px; }
-
-.slide-clinic-challenges .layer.layer--04 .elements .btn {
-  top: 85px;
-  width: 100px;
-  height: 40px; }
-  .slide-clinic-challenges .layer.layer--04 .elements .btn.btn-x {
-    left: 460px !important;
-    top: 645px; }
-
-.slide-clinic-challenges .layer.layer--05 .elements .btn {
-  top: 85px;
-  width: 100px;
-  height: 40px; }
-  .slide-clinic-challenges .layer.layer--05 .elements .btn.btn-x {
-    left: 460px !important;
-    top: 645px; }
 
 .flipcard {
   width: 100%;
