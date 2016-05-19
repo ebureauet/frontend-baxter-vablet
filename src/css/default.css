@@ -190,6 +190,8 @@ span {
         content: "11"; }
       .side-menu .slide-nav div:nth-of-type(12):before {
         content: "12"; }
+      .side-menu .slide-nav div:nth-of-type(13):before {
+        content: "13"; }
     .side-menu .slide-nav .active:after {
       background: rgba(197, 103, 2, 0.4);
       border: solid 10px #849ebb;

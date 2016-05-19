@@ -23,7 +23,7 @@ span { color: $orange;  }
 
 
 .app{
-  position:relative;  
+  position:relative;
 }
 
 
@@ -109,7 +109,7 @@ span { color: $orange;  }
         text-align: center;
         width: 30px;
       }
-      @for $i from 1 to 13 {
+      @for $i from 1 to 14 {
         &:nth-of-type(#{$i}):before { content: '#{$i}'; }
       }
     }
