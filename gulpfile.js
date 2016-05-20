@@ -71,7 +71,8 @@ gulp.task('scripts', function() {
       'src/js/global.js',
       'src/js/owl-init.js',
       'src/js/side-nav.js',
-      'src/js/form.js'
+      'src/js/form.js',
+      'src/js/checklist.js'
     ])
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
