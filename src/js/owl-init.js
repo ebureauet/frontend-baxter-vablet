@@ -1,10 +1,12 @@
 var $owl = $('.owl-carousel');
 $owl.owlCarousel({
   loop: false,
-  margin: 0,
+  margin: 0,  
   nav: false,
   items: 1,
-  touchDrag: true
+  touchDrag: true,
+  URLhashListener:true,
+  startPosition: 'URLHash'
 });
 
 var $owlSlide3 = $(".owl-slide3");
@@ -101,6 +103,15 @@ $('.owl-slide').each(function(){
 
     deleteFrontBtns();
     makeFrontBtns();
+
+
+    
+
+    localStorage["layer"] = target;
+    localStorage["slide"] = window.location.hash;
+
+    console.log(localStorage["layer"]);
+    console.log(localStorage["slide"]);
   });
 
 });
