@@ -14,6 +14,9 @@ $error: #f00000;
 @import "select";
 @import "slides2";
 
+@import 'questionaire';
+@import 'modal';
+
 
 .side-menu{
   transform: translateX(-100%);
@@ -68,7 +71,7 @@ $error: #f00000;
 .btn, .btn-front{
   position:absolute;
   display:block;
-  min-width:100px;
+  min-width:50px;
   min-height:40px;
   border:1px solid #ccc;
 }

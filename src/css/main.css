@@ -51,6 +51,12 @@ table {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both; }
 
+.layer.active .bars .bar {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
 .owl-slide .infinite.layer.active {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite; }
@@ -78,6 +84,26 @@ table {
             transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
     -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
             animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }
+
+@-webkit-keyframes growHeight {
+  from {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+  to {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+@keyframes growHeight {
+  from {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+  to {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+.layer.active .bars .bar {
+  -webkit-animation-name: growHeight;
+          animation-name: growHeight; }
 
 @font-face {
   font-family: "Helvetica Neue";
@@ -3738,6 +3764,162 @@ Copyright (c) 2015 Daniel Eden
   -webkit-transition-delay: 1s;
           transition-delay: 1s; }
 
+.results-container {
+  position: relative;
+  top: 230px; }
+  .results-container .bars {
+    height: 266px;
+    line-height: 266px;
+    width: 100%;
+    display: block;
+    text-align: center; }
+    .results-container .bars .bar {
+      display: inline-block;
+      background-color: rgba(132, 158, 187, 0) !important;
+      vertical-align: bottom;
+      width: 90px;
+      height: 100%;
+      margin: 0px 25px;
+      -webkit-transform-origin: center bottom;
+          -ms-transform-origin: center bottom;
+              transform-origin: center bottom;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: rgba(132, 158, 187, 0.5);
+      /* Fallback */
+      background-image: gradient(linear, 0% 0%, 0% 100%, from(#849ebb), to(rgba(132, 158, 187, 0)));
+      background-image: -webkit-linear-gradient(top, #849ebb 0%,rgba(132, 158, 187, 0.75) 40%,rgba(132, 158, 187, 0) 100%);
+      background-image: linear-gradient(180deg, #849ebb 0%,rgba(132, 158, 187, 0.75) 40%,rgba(132, 158, 187, 0) 100%);
+      /*
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-color), to($finish-color));
+  background-image: -webkit-linear-gradient($gradient-degrees, gradient--concat($gradient--concat));
+  background-image:    -moz-linear-gradient($gradient-degrees, gradient--concat($gradient--concat));
+  background-image:     -ms-linear-gradient($gradient-degrees, gradient--concat($gradient--concat));
+  background-image:      -o-linear-gradient($gradient-degrees, gradient--concat($gradient--concat));
+  */
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#849ebb', EndColorStr='rgba(132, 158, 187, 0)')"; }
+
+.question-container {
+  position: relative;
+  top: 180px;
+  padding-left: 91px; }
+  .question-container .question {
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    text-align: left;
+    font-size: 30px; }
+    .question-container .question span {
+      color: #C7D0D8; }
+
+.answers-container {
+  position: relative;
+  top: 231.5px;
+  padding-left: 90px; }
+  .answers-container .answers {
+    list-style: none;
+    margin: 0; }
+    .answers-container .answers li {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 20px; }
+      .answers-container .answers li span.bullet {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("../img/bullet-bg.png");
+        background-repeat: repeat;
+        display: block;
+        width: 40px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: #849EBB;
+        font-size: 27px;
+        border-radius: 7px; }
+      .answers-container .answers li h4 {
+        font-size: 27px;
+        margin: 0;
+        color: #333;
+        font-weight: 600; }
+      .answers-container .answers li p {
+        font-size: 20px;
+        margin: 0;
+        color: #333; }
+    .answers-container .answers li.passive span.bullet {
+      color: #C7D0D8; }
+    .answers-container .answers li.passive h4 {
+      color: #C7D0D8; }
+    .answers-container .answers li.passive p {
+      color: #C7D0D8; }
+    .answers-container .answers li.active span.bullet {
+      background: #002266;
+      color: #fff; }
+    .answers-container .answers li.active h4 {
+      color: #002266; }
+    .answers-container .answers li.active p {
+      color: #002266; }
+
+.btn-next {
+  bottom: 0px !important;
+  right: 0px !important;
+  display: none !important;
+  width: 125px;
+  height: 62.5px;
+  border: none !important; }
+  .btn-next img {
+    width: 100%;
+    height: 100%; }
+  .btn-next.active {
+    display: block !important; }
+
+* {
+  box-sizing: border-box; }
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7); }
+  .modal-container .btn-modal-close {
+    background-image: url("../img/modal-close.png");
+    background-size: 100%;
+    z-index: 2; }
+  .modal-container .modal-outer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+    .modal-container .modal-outer .modal-inner {
+      position: relative;
+      width: 844px;
+      height: 408px;
+      background-image: url("../img/modal-bg.png");
+      background-size: 100%;
+      padding: 95px 90px; }
+      .modal-container .modal-outer .modal-inner h2 {
+        color: #fff;
+        font-size: 50px;
+        line-height: 50px;
+        margin: 0;
+        margin-bottom: 40px; }
+      .modal-container .modal-outer .modal-inner .desc p {
+        max-width: 433px;
+        float: left;
+        color: #fff;
+        line-height: 31px;
+        font-size: 31px;
+        margin: 0; }
+      .modal-container .modal-outer .modal-inner .desc .get-started {
+        display: block;
+        float: right;
+        width: 234.5px;
+        height: 72px; }
+        .modal-container .modal-outer .modal-inner .desc .get-started img {
+          max-width: 100%; }
+
 .side-menu {
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
@@ -3783,7 +3965,7 @@ Copyright (c) 2015 Daniel Eden
 .btn, .btn-front {
   position: absolute;
   display: block;
-  min-width: 100px;
+  min-width: 50px;
   min-height: 40px;
   border: 1px solid #ccc; }
 

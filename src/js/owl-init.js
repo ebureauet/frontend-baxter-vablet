@@ -91,6 +91,9 @@ $('.app').on('click','.btn-front', function(e){
 
 
 $('.owl-slide').each(function(){
+  $(this).find('.layer').find('[data-toggle="layer"]').on('touchstart touchdrag', function(e){
+    e.preventDefault();
+  });
   $(this).find('.layer').find('[data-toggle="layer"]').on('click', function(){
     var target = $(this).data('target');
     $(target).siblings().removeClass('active');

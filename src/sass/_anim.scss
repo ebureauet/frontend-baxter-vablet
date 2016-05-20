@@ -3,6 +3,16 @@
   animation-fill-mode: both;
 }
 
+%animatedDur05s {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+%animatedDur1s {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
 %animated.infinite {
   animation-iteration-count: infinite;
 }
@@ -41,4 +51,19 @@
 
 %zoomInUp {
   animation-name: zoomInUp;
+}
+
+
+
+@keyframes growHeight {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+%growHeight {
+  animation-name: growHeight;
 }
