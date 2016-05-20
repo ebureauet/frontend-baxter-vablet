@@ -51,6 +51,12 @@ table {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both; }
 
+.layer.active .badges .badge {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
 .layer.active .bars .bar {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
@@ -60,6 +66,18 @@ table {
 .owl-slide .infinite.layer.active {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite; }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+
+.layer.active .badges .badge {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn; }
 
 @keyframes fadeIn {
   from {
@@ -3766,14 +3784,15 @@ Copyright (c) 2015 Daniel Eden
 
 .results-container {
   position: relative;
-  top: 230px; }
+  top: 250px; }
   .results-container .bars {
-    height: 266px;
-    line-height: 266px;
+    height: 318px;
+    line-height: 318px;
     width: 100%;
     display: block;
     text-align: center; }
     .results-container .bars .bar {
+      position: relative;
       display: inline-block;
       background-color: rgba(132, 158, 187, 0) !important;
       vertical-align: bottom;
@@ -3785,6 +3804,7 @@ Copyright (c) 2015 Daniel Eden
               transform-origin: center bottom;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
+      min-height: 10%;
       background-color: rgba(132, 158, 187, 0.5);
       /* Fallback */
       background-image: gradient(linear, 0% 0%, 0% 100%, from(#849ebb), to(rgba(132, 158, 187, 0)));
@@ -3798,6 +3818,29 @@ Copyright (c) 2015 Daniel Eden
   background-image:      -o-linear-gradient($gradient-degrees, gradient--concat($gradient--concat));
   */
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#849ebb', EndColorStr='rgba(132, 158, 187, 0)')"; }
+    .results-container .bars .counter {
+      font-size: 30px;
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      text-align: center;
+      height: auto;
+      line-height: 1;
+      font-weight: bold; }
+  .results-container .badges {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    text-align: center; }
+    .results-container .badges .badge {
+      display: inline-block;
+      margin: 0 9px; }
+      .results-container .badges .badge img {
+        display: block;
+        width: 122px;
+        height: auto;
+        position: relative; }
 
 .question-container {
   position: relative;
@@ -3966,8 +4009,7 @@ Copyright (c) 2015 Daniel Eden
   position: absolute;
   display: block;
   min-width: 50px;
-  min-height: 40px;
-  border: 1px solid #ccc; }
+  min-height: 40px; }
 
 .btn-front {
   z-index: 10; }

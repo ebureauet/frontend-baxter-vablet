@@ -67,7 +67,7 @@ gulp.task('scripts', function() {
       'src/js/lib/jquery-2.1.3.js',
       'src/js/lib/fastclick.js',
       'src/js/lib/owl.carousel.js',
-      'src/js/lib/swipeme.js',
+      'src/js/lib/countUp.min.js',
       'src/js/global.js',
       'src/js/owl-init.js',
       'src/js/side-nav.js',
