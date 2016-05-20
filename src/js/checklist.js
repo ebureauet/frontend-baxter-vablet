@@ -12,6 +12,9 @@ $('.answers').on('click','li',function(){
   $(this).parents('.layer').find('.btn-next').addClass('active');
 });
 
+
+
+
 // Calculate results and assign percentages to the result bars
 $('#calculate-results').on('click', function(){
 
@@ -23,5 +26,31 @@ $('#calculate-results').on('click', function(){
     var pct = Math.round((n * 100) / max);
     console.log(pct);
     $(this).css('height',pct+"%");
+
+    $(this).find('.counter').each(function() {
+      var $this = $(this),
+          countTo = pct;
+
+      $(this).text(0);
+
+      $({ countNum: $this.text()}).animate({
+        countNum: countTo
+      },
+      {
+        duration: 1000,
+        easing:'linear',
+        step: function() {
+          $this.text(Math.floor(this.countNum)+'%');
+        },
+        complete: function() {
+          $this.text(this.countNum+'%');
+          //alert('finished');
+        }
+
+      });
+    });
   });
+
+
+
 });

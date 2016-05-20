@@ -1,13 +1,14 @@
 .results-container{
 	position:relative;
-	top:230px;
+	top:250px;
 	.bars{
-		height:266px;
-		line-height:266px;
+		height:318px;
+		line-height:318px;
 		width:100%;
 		display:block;
 		text-align:center;
 		.bar{
+			position:relative;
 			display:inline-block;
 			background-color:rgba(#849EBB, 0)!important;
 			vertical-align: bottom;
@@ -17,12 +18,40 @@
 			transform-origin:center bottom;
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
+			min-height:10%;
 			$gradientBg : (
 				0% : rgba(#849EBB, 1),
 				40% : rgba(#849EBB, 0.75),
 				100% : rgba(#849EBB, 0)
 			);
 			@include gradient(90deg, $gradientBg);
+		}
+		.counter{
+			font-size:30px;
+			position:absolute;
+			top:10%;
+			width:100%;
+			text-align:center;
+			height: auto;
+line-height: 1;
+font-weight:bold;
+		}
+	}
+	.badges{
+		position:absolute;
+		top:100%;
+		left:0px;
+		width:100%;
+		text-align: center;
+		.badge{
+			display: inline-block;
+			margin:0 9px;
+			img{
+				display:block;
+				width:122px;
+				height:auto;
+				position:relative;
+			}
 		}
 	}
 }
@@ -33,6 +62,12 @@
 		.bar{
 			@extend %animatedDur1s;
 			@extend %growHeight;
+		}
+	}
+	.badges{
+		.badge{
+			@extend %animatedDur05s;
+			@extend %zoomIn;
 		}
 	}
 }
