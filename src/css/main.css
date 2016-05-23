@@ -144,6 +144,13 @@ table {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: url("../fonts/HelveticaNeueLTPro-MdCn.eot");
+  src: url("../fonts/HelveticaNeueLTPro-MdCn.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueLTPro-MdCn.woff2") format("woff2"), url("../fonts/HelveticaNeueLTPro-MdCn.woff") format("woff"), url("../fonts/HelveticaNeueLTPro-MdCn.ttf") format("truetype"), url("../fonts/HelveticaNeueLTPro-MdCn.svg#HelveticaNeueLTPro-LtCn") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   box-sizing: border-box; }
 
@@ -3851,17 +3858,24 @@ Copyright (c) 2015 Daniel Eden
     line-height: 70px;
     color: #fff;
     text-align: left;
-    font-size: 30px; }
+    font-size: 30px;
+    font-family: "Helvetica Neue Light", arial, sans-serif; }
     .question-container .question span {
       color: #C7D0D8; }
 
 .answers-container {
   position: relative;
-  top: 231.5px;
-  padding-left: 90px; }
+  top: 180px;
+  padding-left: 90px;
+  height: 516px; }
   .answers-container .answers {
     list-style: none;
-    margin: 0; }
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
     .answers-container .answers li {
       position: relative;
       padding-left: 60px;
@@ -3883,12 +3897,13 @@ Copyright (c) 2015 Daniel Eden
       .answers-container .answers li h4 {
         font-size: 27px;
         margin: 0;
-        color: #333;
-        font-weight: 600; }
+        color: #222;
+        font-family: "Helvetica Neue Medium", arial, sans-serif; }
       .answers-container .answers li p {
         font-size: 20px;
         margin: 0;
-        color: #333; }
+        color: #222;
+        font-family: "Helvetica Neue Light", arial, sans-serif; }
     .answers-container .answers li.passive span.bullet {
       color: #C7D0D8; }
     .answers-container .answers li.passive h4 {
@@ -3904,15 +3919,15 @@ Copyright (c) 2015 Daniel Eden
       color: #002266; }
 
 .btn-next {
-  bottom: 0px !important;
+  bottom: -5px !important;
   right: 0px !important;
   display: none !important;
-  width: 125px;
-  height: 62.5px;
-  border: none !important; }
+  border: none !important;
+  min-width: 0px !important;
+  max-width: none !important; }
   .btn-next img {
-    width: 100%;
-    height: 100%; }
+    position: relative;
+    width: 125px; }
   .btn-next.active {
     display: block !important; }
 
@@ -3947,14 +3962,18 @@ Copyright (c) 2015 Daniel Eden
         font-size: 50px;
         line-height: 50px;
         margin: 0;
-        margin-bottom: 40px; }
+        margin-bottom: 40px;
+        font-weight: normal;
+        font-family: "Helvetica Neue Light", arial, sans-serif; }
       .modal-container .modal-outer .modal-inner .desc p {
         max-width: 433px;
         float: left;
         color: #fff;
         line-height: 31px;
         font-size: 31px;
-        margin: 0; }
+        margin: 0;
+        font-weight: normal;
+        font-family: "Helvetica Neue Light", arial, sans-serif; }
       .modal-container .modal-outer .modal-inner .desc .get-started {
         display: block;
         float: right;
@@ -4031,7 +4050,7 @@ Copyright (c) 2015 Daniel Eden
 .flipcard {
   width: 100%;
   height: 100%;
-  font-size: 25px; }
+  font-size: 26px; }
   .flipcard > div {
     position: relative;
     display: block;
@@ -4161,7 +4180,7 @@ Copyright (c) 2015 Daniel Eden
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#426190', EndColorStr='#839DB9')"; }
   .flipcard .back {
     display: none;
-    border: 2px solid #809AB9; }
+    border: 3px solid #809AB9; }
     .flipcard .back.grd {
       background-color: #163577;
       /* Fallback */

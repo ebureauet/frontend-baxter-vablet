@@ -1,7 +1,7 @@
 var $owl = $('.owl-carousel');
 $owl.owlCarousel({
   loop: false,
-  margin: 0,  
+  margin: 0,
   nav: false,
   items: 1,
   touchDrag: true,
@@ -74,11 +74,14 @@ $(".slide-overlay-info .close").click(function(e){
 
 
 $owl.on('translated.owl.carousel', function(event) {
-  $('.owl-slide .layer').removeClass('active').filter('.layer--01').addClass('active');
   makeFrontBtns();
 });
 
 $owl.on('changed.owl.carousel', function(event) {
+  setTimeout(function(){
+        $('.owl-slide .layer').removeClass('active').filter('.layer--01').addClass('active');
+    }, 400);
+
   deleteFrontBtns();
 });
 
@@ -87,16 +90,12 @@ $('.app').on('click','.btn-front', function(e){
   var target = $(this).data('target');
   var targetPos = $(target).parent().index();
   $('.slide-nav').find('.slide-thumb').filter(':eq('+targetPos+')').trigger('click');
-  //console.log($('.slide-nav').find('.slide-thumb').filter(':eq('+targetPos+')'));
-  //e.stopPropagation();
 });
 
 
-$('.owl-slide').each(function(){
-  $(this).find('.layer').find('[data-toggle="layer"]').on('touchstart touchdrag', function(e){
-    e.preventDefault();
-  });
-  $(this).find('.layer').find('[data-toggle="layer"]').on('click', function(){
+//$('.owl-slide').each(function(){
+
+  $('.owl-slide').find('.layer [data-toggle="layer"]').on('click', function(){
     var target = $(this).data('target');
     $(target).siblings().removeClass('active');
     $(target).addClass('active');
@@ -105,13 +104,14 @@ $('.owl-slide').each(function(){
     makeFrontBtns();
 
 
-    
+
 
     localStorage["layer"] = target;
     localStorage["slide"] = window.location.hash;
 
     console.log(localStorage["layer"]);
     console.log(localStorage["slide"]);
+
   });
 
-});
+//});
