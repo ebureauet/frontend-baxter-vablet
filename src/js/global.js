@@ -45,3 +45,14 @@ $(".overlay-close").click(function(e){
   e.preventDefault();
   $(this).closest('.overlay').addClass('displaynone');
 });
+
+
+if (localStorage.returnToReferencePage == "true") {
+  localStorage.returnToReferencePage = "false";
+  window.location = localStorage.slideToBeReturn;
+}
+
+$(".btn-link-brochure").on("click", function() {
+  localStorage.returnToReferencePage = "true";
+  localStorage.slideToBeReturn = window.location.hash;
+});
