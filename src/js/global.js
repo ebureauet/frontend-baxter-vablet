@@ -56,3 +56,5 @@ $(".btn-link-brochure").on("click", function() {
   localStorage.returnToReferencePage = "true";
   localStorage.slideToBeReturn = window.location.hash;
 });
+
+

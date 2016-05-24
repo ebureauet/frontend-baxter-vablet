@@ -4065,7 +4065,8 @@ Copyright (c) 2015 Daniel Eden
               transform: translateY(-50%);
       width: 100%; }
       .flipcard > div .texts p {
-        margin-bottom: 0.6em; }
+        margin-bottom: 0.6em;
+        font-family: "Helvetica Neue Light", arial, sans-serif; }
         .flipcard > div .texts p:last-child {
           margin-bottom: 0; }
     .flipcard > div .btn-cta {
