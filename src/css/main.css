@@ -251,32 +251,49 @@ span {
         position: absolute;
         text-align: center;
         width: 30px; }
-      .side-menu .slide-nav div:nth-of-type(1):before {
+      .side-menu .slide-nav div .number {
+        background: #fff;
+        bottom: 0;
+        color: #173176;
+        content: ' ';
+        display: block;
+        font-size: 17px;
+        height: 40px;
+        left: 30px;
+        line-height: 30px;
+        position: absolute;
+        text-align: center;
+        width: 30px; }
+      .side-menu .slide-nav div:not(.hide):nth-of-type(1):before {
         content: "1"; }
-      .side-menu .slide-nav div:nth-of-type(2):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(2):before {
         content: "2"; }
-      .side-menu .slide-nav div:nth-of-type(3):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(3):before {
         content: "3"; }
-      .side-menu .slide-nav div:nth-of-type(4):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(4):before {
         content: "4"; }
-      .side-menu .slide-nav div:nth-of-type(5):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(5):before {
         content: "5"; }
-      .side-menu .slide-nav div:nth-of-type(6):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(6):before {
         content: "6"; }
-      .side-menu .slide-nav div:nth-of-type(7):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(7):before {
         content: "7"; }
-      .side-menu .slide-nav div:nth-of-type(8):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(8):before {
         content: "8"; }
-      .side-menu .slide-nav div:nth-of-type(9):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(9):before {
         content: "9"; }
-      .side-menu .slide-nav div:nth-of-type(10):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(10):before {
         content: "10"; }
-      .side-menu .slide-nav div:nth-of-type(11):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(11):before {
         content: "11"; }
-      .side-menu .slide-nav div:nth-of-type(12):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(12):before {
         content: "12"; }
-      .side-menu .slide-nav div:nth-of-type(13):before {
+      .side-menu .slide-nav div:not(.hide):nth-of-type(13):before {
         content: "13"; }
+      .side-menu .slide-nav div:not(.hide):nth-of-type(14):before {
+        content: "14"; }
+      .side-menu .slide-nav div.hide {
+        display: none; }
     .side-menu .slide-nav .active:after {
       background: rgba(197, 103, 2, 0.4);
       border: solid 10px #849ebb;
@@ -4065,9 +4082,32 @@ Copyright (c) 2015 Daniel Eden
               transform: translateY(-50%);
       width: 100%; }
       .flipcard > div .texts p {
-        margin-bottom: 0.6em; }
+        margin-bottom: 0.6em;
+        font-size: 25px;
+        line-height: 1.15; }
         .flipcard > div .texts p:last-child {
           margin-bottom: 0; }
+        .flipcard > div .texts p sub, .flipcard > div .texts p sup {
+          /* Specified in % so that the sup/sup is the
+             right size relative to the surrounding text */
+          font-size: 50%;
+          /* Zero out the line-height so that it doesn't
+             interfere with the positioning that follows */
+          line-height: 0;
+          /* Where the magic happens: makes all browsers position
+             the sup/sup properly, relative to the surrounding text */
+          position: relative;
+          /* Note that if you're using Eric Meyer's reset.css, this
+             is already set and you can remove this rule */
+          vertical-align: baseline;
+          margin: 0 4px; }
+        .flipcard > div .texts p sup {
+          /* Move the superscripted text up */
+          top: -0.75em; }
+        .flipcard > div .texts p sub {
+          /* Move the subscripted text down, but only
+             half as far down as the superscript moved up */
+          bottom: -0.25em; }
     .flipcard > div .btn-cta {
       position: absolute;
       bottom: 0px;
@@ -4107,7 +4147,7 @@ Copyright (c) 2015 Daniel Eden
   */
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#EEAA00', EndColorStr='#FA8400')"; }
   .flipcard .front {
-    border: 2px solid #C6CFD4; }
+    border: 3px solid #C6CFD4; }
     .flipcard .front.grd {
       background-color: #637fa5;
       /* Fallback */

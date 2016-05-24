@@ -1,3 +1,18 @@
+$('.owl-carousel').find('.owl-slide').each(function(){
+  var i = $(this).index();
+  var rel = $(this).data('hash');
+  $('.slide-nav').find('.slide-thumb').filter(':eq('+i+')').each(function(){
+    $(this).attr('data-rel',rel);
+  });
+});
+
+var n = 0;
+$('.slide-nav').find('.slide-thumb').filter(':not(.hide)').each(function(){
+  $(this).append('<i class="number">'+n+'</i>');
+  n++;
+});
+
+
 var $owl = $('.owl-carousel');
 $owl.owlCarousel({
   loop: false,
