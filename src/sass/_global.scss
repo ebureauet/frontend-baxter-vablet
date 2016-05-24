@@ -109,9 +109,33 @@ span { color: $orange;  }
         text-align: center;
         width: 30px;
       }
-      @for $i from 1 to 14 {
-        &:nth-of-type(#{$i}):before { content: '#{$i}'; }
+
+      .number{
+        background: #fff;
+        bottom: 0;
+        color: #173176;
+        content: ' ';
+        display: block;
+        font-size: 17px;
+        height: 40px;
+        left: 30px;
+        line-height: 30px;
+        position: absolute;
+        text-align: center;
+        width: 30px;
       }
+
+      &:not(.hide){
+        @for $i from 1 to 15 {
+          &:nth-of-type(#{$i}):before { content: '#{$i}'; }
+        }
+      }
+
+
+      &.hide{
+        display:none;
+      }
+
     }
     .active:after {
       background: rgba(#c56702, 0.4);

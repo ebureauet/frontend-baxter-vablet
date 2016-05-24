@@ -109,6 +109,7 @@ $error: #f00000;
     border-radius:10px;
     //overflow:hidden;
     height:100%;
+
     .texts{
       position: absolute;
       text-align: center;
@@ -118,9 +119,40 @@ $error: #f00000;
       width: 100%;
       p{
         margin-bottom:0.6em;
+        font-size:25px;
+        line-height:1.15;
         font-family: "Helvetica Neue Light", arial, sans-serif;
         &:last-child{
           margin-bottom:0;
+        }
+        sub, sup {
+          /* Specified in % so that the sup/sup is the
+             right size relative to the surrounding text */
+          font-size: 50%;
+
+          /* Zero out the line-height so that it doesn't
+             interfere with the positioning that follows */
+          line-height: 0;
+
+          /* Where the magic happens: makes all browsers position
+             the sup/sup properly, relative to the surrounding text */
+          position: relative;
+
+          /* Note that if you're using Eric Meyer's reset.css, this
+             is already set and you can remove this rule */
+          vertical-align: baseline;
+          margin:0 4px;
+        }
+
+        sup {
+          /* Move the superscripted text up */
+          top: -0.75em;
+        }
+
+        sub {
+          /* Move the subscripted text down, but only
+             half as far down as the superscript moved up */
+          bottom: -0.25em;
         }
       }
     }
@@ -167,10 +199,11 @@ $error: #f00000;
         @include gradient(45deg, $gradientBg);
       }
     }
-    border:2px solid #C6CFD4;
+    border:3px solid #C6CFD4;
   }
   .back{
     display:none;
+
     &.grd{
       $gradientBg : (
         0% : #031C5C,
