@@ -73,8 +73,16 @@ function closeSideMenu() {
 
 
 
-
-
+function propsPositions(){
+  $('.prop[data-pos]').each(function(){
+    var pos = $(this).data("pos").split(",");
+    $(this).css({
+      "left" : parseInt(pos[0]),
+      "top" : parseInt(pos[1])
+    });
+  });
+}
+propsPositions();
 
 
   function btnPositions(){
