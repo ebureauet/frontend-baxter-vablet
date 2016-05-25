@@ -1,4 +1,5 @@
 $blue: #133A7F;
+$blueDarker: #002266;
 $gray: #CCD3DA;
 $orange: #f07c00;
 $error: #f00000;
@@ -17,6 +18,41 @@ $error: #f00000;
 @import 'questionaire';
 @import 'modal';
 
+
+
+sub, sup {
+  /* Specified in % so that the sup/sup is the
+     right size relative to the surrounding text */
+  font-size: 50%;
+
+  /* Zero out the line-height so that it doesn't
+     interfere with the positioning that follows */
+  line-height: 0;
+
+  /* Where the magic happens: makes all browsers position
+     the sup/sup properly, relative to the surrounding text */
+  position: relative;
+
+  /* Note that if you're using Eric Meyer's reset.css, this
+     is already set and you can remove this rule */
+  vertical-align: baseline;
+  margin:0 4px;
+}
+
+sup {
+  /* Move the superscripted text up */
+  top: -0.75em;
+}
+
+sub {
+  /* Move the subscripted text down, but only
+     half as far down as the superscript moved up */
+  bottom: -0.25em;
+}
+
+b{
+  font-family: "Helvetica Neue Medium", arial, sans-serif;
+}
 
 .side-menu{
   transform: translateX(-100%);
@@ -57,8 +93,8 @@ $error: #f00000;
     height:100%;
     &.active{
       display:block;
-      @extend %animated;
-      @extend %fadeIn;
+      //@extend %animated;
+      //@extend %fadeIn;
     }
     >img{
       width:100%;
@@ -66,6 +102,7 @@ $error: #f00000;
     }
   }
 }
+
 
 
 .btn, .btn-front{
@@ -96,6 +133,148 @@ $error: #f00000;
       font-weight: bold;
     }
   }
+  .head{
+    h2{
+
+
+    }
+    &.head--products-overview{
+      padding:82px 90px;
+      h2{
+        text-transform: uppercase;
+        font-family: "Helvetica Neue Light", arial, sans-serif;
+        font-size:50px;
+        font-weight:100;
+        line-height:1;
+        color:$blue;
+        margin-bottom:8px;
+        em{
+          font-family: "Helvetica Neue", arial, sans-serif;
+          font-weight:bold;
+          color:$orange;
+        }
+      }
+      h3{
+        font-size:31px;
+        line-height:1.2;
+        color:#222;
+        font-family: "Helvetica Neue Light", arial, sans-serif;
+      }
+    }
+  }
+  .copy{
+    color:#222;
+    font-family: "Helvetica Neue Light", arial, sans-serif;
+    blockquote{
+      font-size:36px;
+      font-style:italic;
+      position:relative;
+      font-family: "Helvetica Neue", arial, sans-serif;
+      color:#000;
+      line-height:1.3;
+      &:before{
+        content:"“";
+        position:absolute;
+        font-family: "Helvetica Neue Bold", arial, sans-serif;
+        font-style:normal;
+        font-weight:600;
+        font-size:100px;
+        top:-12px;
+        left:-58px;
+        line-height: 1;
+        color:$blueDarker;
+      }
+      &:after{
+        content:"”";
+        position:absolute;
+        font-family: "Helvetica Neue Bold", arial, sans-serif;
+        font-style:normal;
+        font-size:100px;
+        font-weight:600;
+        top:85%;
+        right:-58px;
+        line-height: 1;
+        color:$blueDarker;
+      }
+    }
+    ul{
+      padding-left:30px;
+      li{
+        font-size:26px;
+        line-height:1.2;
+        margin-bottom: 20px;
+        &:before{
+          content:'⚫';
+          position: absolute;
+          top: 0.5em;
+          left: -30px;
+          font-size: 0.65em;
+          margin: 0;
+          padding: 0;
+          display: block;
+          line-height: 1;
+          color: $blue;
+        }
+      }
+    }
+    &.copy--intro{
+      padding:90px;
+      color:white;
+      h2{
+        img{
+          position:relative;
+          margin-bottom: 25px;
+        }
+      }
+      p{
+        font-family: "Helvetica Neue Light", arial, sans-serif;
+        font-weight:lighter;
+        font-size:21px;
+        color:#c7d0d8;
+        line-height: 1.35;
+        margin-bottom: 60px;
+      }
+    }
+    &.copy--home{
+      font-size:36px;
+      color:#000;
+      line-height:1.22;
+    }
+    &.copy--clinical{
+      ul{
+        li{
+          font-size:28px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .foot{
+    color:#849ebb;
+    position:absolute;
+    width:100%;
+    top:710px;
+    left:0px;
+    font-family: "Helvetica Neue Light", arial, sans-serif;
+    &.foot--copyright{
+      font-size:18px;
+      line-height:1;
+      text-align:center;
+    }
+    &.foot--intro{
+      font-size:16px;
+      line-height:1;
+      text-align:right;
+      padding:0px 90px;
+      letter-spacing:0.75px;
+    }
+    &.foot--clinical{
+      font-size:18px;
+      line-height:1;
+      text-align:left;
+      padding:0px 90px;
+    }
+  }
 }
 
 
@@ -124,35 +303,6 @@ $error: #f00000;
         font-family: "Helvetica Neue Light", arial, sans-serif;
         &:last-child{
           margin-bottom:0;
-        }
-        sub, sup {
-          /* Specified in % so that the sup/sup is the
-             right size relative to the surrounding text */
-          font-size: 50%;
-
-          /* Zero out the line-height so that it doesn't
-             interfere with the positioning that follows */
-          line-height: 0;
-
-          /* Where the magic happens: makes all browsers position
-             the sup/sup properly, relative to the surrounding text */
-          position: relative;
-
-          /* Note that if you're using Eric Meyer's reset.css, this
-             is already set and you can remove this rule */
-          vertical-align: baseline;
-          margin:0 4px;
-        }
-
-        sup {
-          /* Move the superscripted text up */
-          top: -0.75em;
-        }
-
-        sub {
-          /* Move the subscripted text down, but only
-             half as far down as the superscript moved up */
-          bottom: -0.25em;
         }
       }
     }
@@ -246,6 +396,92 @@ $error: #f00000;
     transform: translate(-50%,-50%);
     img{
       position:relative;
+    }
+  }
+  &.prop--image{
+
+  }
+  &.prop--badgetext{
+    font-size:14px;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    height:100px;
+    width:120px;
+    line-height:100px;
+    display:block;
+    margin-left:115px;
+    span{
+      display:inline-block;
+      vertical-align:middle;
+      font-size:14px;
+      line-height:1.25;
+      color:#222;
+      font-family: "Helvetica Neue", arial, sans-serif;
+    }
+  }
+}
+
+
+
+
+// animated props
+.owl-item.active{
+  .owl-slide{
+    .layer.active{
+
+      .motion{
+        @extend %animatedDur05s;
+
+        &--delay05{
+          @extend %animatedDelay05s;
+        }
+        &--delay025{
+          @extend %animatedDelay025s;
+        }
+        &--delay05{
+          @extend %animatedDelay05s;
+        }
+        &--delay075{
+          @extend %animatedDelay075s;
+        }
+        &--delay1{
+          @extend %animatedDelay1s;
+        }
+        &--delay125{
+          @extend %animatedDelay125s;
+        }
+        &--delay15{
+          @extend %animatedDelay15s;
+        }
+        &--delay175{
+          @extend %animatedDelay175s;
+        }
+
+        &--fadeIn{
+          @extend .fadeIn;
+        }
+        &--zoomIn{
+          @extend .zoomIn;
+        }
+        &--rotateIn{
+          @extend .rotateIn;
+        }
+        &--slideInDown{
+          @extend .slideInDown;
+        }
+        &--slideInLeft{
+          @extend .slideInLeft;
+        }
+        &--slideInRight{
+          @extend .slideInRight;
+        }
+        &--slideInUp{
+          @extend .slideInUp;
+        }
+        &--bounceIn{
+          @extend .bounceIn;
+        }
+      }
+
     }
   }
 }
