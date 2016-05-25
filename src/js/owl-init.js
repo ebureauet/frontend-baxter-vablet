@@ -90,6 +90,7 @@ $(".slide-overlay-info .close").click(function(e){
 
 $owl.on('translated.owl.carousel', function(event) {
   makeFrontBtns();
+  localStorage.slideToBeReturn = window.location.hash;
 });
 
 $owl.on('changed.owl.carousel', function(event) {
@@ -109,31 +110,6 @@ $('.app').on('click','.btn-front', function(e){
 
 
 //$('.owl-slide').each(function(){
-
-function updateQueryStringParameter(uri, key, value) {
-  console.log("test");
-  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-  if (uri.match(re)) {
-    console.log(uri.replace(re, '$1' + key + "=" + value + '$2'));
-    return uri.replace(re, '$1' + key + "=" + value + '$2') + uri.hash;
-  }
-  else {
-    console.log(uri.replace(re, '$1' + key + "=" + value + '$2'));
-    return uri + separator + key + "=" + value + uri.hash;
-  }
-}
-
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
   $('.owl-slide').find('.layer [data-toggle="layer"]').on('click', function(){
     var target = $(this).data('target');
     $(target).siblings().removeClass('active');
