@@ -9,7 +9,7 @@ $(function(){
       localStorage.returnToReferencePage = "false";
       window.location = localStorage.slideToBeReturn;
     }
-  },300);
+  },100);
 });
 
 
