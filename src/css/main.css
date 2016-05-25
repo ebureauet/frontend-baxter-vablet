@@ -950,7 +950,7 @@ table {
   to {
     opacity: 1; } }
 
-.fadeIn {
+.fadeIn, .owl-item.active .owl-slide .layer.active .motion--fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
 
@@ -2533,7 +2533,7 @@ html, body {
 
 body {
   color: #FFF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeue-Light", "HelveticaNueue Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4; }
@@ -3561,7 +3561,7 @@ Copyright (c) 2015 Daniel Eden
   100% {
     opacity: 1; } }
 
-.fadeIn {
+.fadeIn, .owl-item.active .owl-slide .layer.active .motion--fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
 
@@ -6476,7 +6476,8 @@ b {
     .elements .head.head--products-overview h3 {
       font-size: 31px;
       line-height: 1.2;
-      color: #222; }
+      color: #222;
+      font-family: "Helvetica Neue Light", arial, sans-serif; }
   .elements .copy {
     color: #222;
     font-family: "Helvetica Neue Light", arial, sans-serif; }
@@ -6806,4 +6807,5 @@ b {
       vertical-align: middle;
       font-size: 14px;
       line-height: 1.25;
-      color: #222; }
+      color: #222;
+      font-family: "Helvetica Neue", arial, sans-serif; }

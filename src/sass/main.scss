@@ -158,6 +158,7 @@ b{
         font-size:31px;
         line-height:1.2;
         color:#222;
+        font-family: "Helvetica Neue Light", arial, sans-serif;
       }
     }
   }
@@ -413,6 +414,7 @@ b{
       font-size:14px;
       line-height:1.25;
       color:#222;
+      font-family: "Helvetica Neue", arial, sans-serif;
     }
   }
 }
@@ -453,6 +455,9 @@ b{
           @extend %animatedDelay175s;
         }
 
+        &--fadeIn{
+          @extend .fadeIn;
+        }
         &--zoomIn{
           @extend .zoomIn;
         }
