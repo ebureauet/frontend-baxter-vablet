@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     fileinclude = require('gulp-file-include'),
     imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
     notify = require('gulp-notify'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -93,6 +94,20 @@ gulp.task('images', function() {
     .pipe(notify({ message: 'Images task complete' }));
 });
 
+
+//use pngquant instead
+gulp.task('img-optim', function(){
+  return gulp.src('src/img/**/{,*/}*.{jpg,gif,png}')
+  .pipe(imagemin({
+      progressive: true,
+      progressive: true,
+      interlaced: true,
+      use: [pngquant()]
+  }))
+  .pipe(gulp.dest('dist/img/'));
+});
+
+
 // Clear cache
 gulp.task('clearCache', function() {
   // Or, just call this for everything
@@ -135,4 +150,4 @@ gulp.task('default', ['sass', 'html', 'scripts', 'browser-sync'], function () {
   gulp.watch("src/**/*.html", ['html', browserSync.reload]);
 });
 
-gulp.task('dist', ['sass', 'html', 'scripts', 'copy', 'zip'], function(){});
+gulp.task('dist', ['sass', 'html', 'scripts', 'copy', 'img-optim', 'zip'], function(){});
