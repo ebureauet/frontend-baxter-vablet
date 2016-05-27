@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch')
     browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
+    runSequence = require('run-sequence'),
     rename = require('gulp-rename'),
     gulpif = require('gulp-if'),
     del = require('del'),
@@ -125,6 +126,12 @@ gulp.task('zip', ['copy'], function () {
       .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('zip2', function () {
+  return gulp.src('dist/**/*')
+      .pipe(zip('dist.zhtml'))
+      .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('copy', ['sass', 'html', 'scripts'], function() {
   del.sync(['dist/**'], function (err, paths) {
     console.log('Deleted files/folders:\n', paths.join('\n'));
@@ -150,4 +157,8 @@ gulp.task('default', ['sass', 'html', 'scripts', 'browser-sync'], function () {
   gulp.watch("src/**/*.html", ['html', browserSync.reload]);
 });
 
-gulp.task('dist', ['sass', 'html', 'scripts', 'copy', 'img-optim', 'zip'], function(){});
+gulp.task('dist', ['sass', 'html', 'scripts','img-optim', 'copy', 'zip'], function(){});
+
+gulp.task('build', function(callback) {
+  runSequence('copy', 'img-optim', 'zip2');
+});
