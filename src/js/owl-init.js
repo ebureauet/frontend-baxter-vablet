@@ -35,7 +35,7 @@ function makeFrontBtns(){
   // create a clone of the buttons and append them to main container.
   // find slideto buttons.
   $('.owl-item.active').find('.layer.active .elements .btn[data-toggle="slideTo"]').each(function(){
-    console.log($(this).prop('class'));
+    //console.log($(this).prop('class'));
     var cl = $(this).prop('class');
     $(this).clone().removeAttr('class').addClass("btn-front "+cl).removeClass('btn').appendTo('.app');
   });
@@ -110,7 +110,7 @@ $('.app').on('click','.btn-front', function(e){
 
 
 //$('.owl-slide').each(function(){
-  $('.owl-item').find('.layer [data-toggle="layer"]').on('click', function(){
+  $('.owl-item.active .layer [data-toggle="layer"]').on('click', function(){
     var target = $(this).data('target');
     $(target).siblings().removeClass('active');
     $(target).addClass('active');

@@ -157,7 +157,7 @@ gulp.task('default', ['sass', 'html', 'scripts', 'browser-sync'], function () {
   gulp.watch("src/**/*.html", ['html', browserSync.reload]);
 });
 
-gulp.task('dist', ['sass', 'html', 'scripts','img-optim', 'copy', 'zip'], function(){});
+gulp.task('dist', ['sass', 'html', 'scripts', 'copy', 'zip'], function(){});
 
 gulp.task('build', function(callback) {
   runSequence('copy', 'img-optim', 'zip2');
