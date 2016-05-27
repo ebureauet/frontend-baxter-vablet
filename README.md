@@ -1,10 +1,10 @@
-#Vablet html presentation
+#Vablet html presentation (Pure Fluid HD)
 
-This is simple HTML page based on swipe navigation by Owl Carousel.
+This is simple HTML page based on swipe navigation by Owl Carousel. Currently it features the Pure Fluid HD subject
 
 ##Gulp setup
 * **gulp** - runs the dev mode with browser refresh
-* **gulp dist** - builds a project and creates dist.zhtml file, that's the one you should upload to vablet
+* **gulp build** - builds a project and creates dist.zhtml file, that's the one you should upload to vablet
 
 ##Good to know
 Most of the animations are CSS based. They work based on an assumtion that Owl Carousel always adds `active` class on the currently displayed container.
