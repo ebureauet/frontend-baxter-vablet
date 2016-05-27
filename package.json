@@ -12,6 +12,7 @@
     "gulp-file-include": "^0.13.7",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
+    "imagemin-pngquant": "^4.2.2",
     "gulp-jade": "^1.1.0",
     "gulp-jshint": "^2.0.0",
     "gulp-notify": "^2.2.0",
