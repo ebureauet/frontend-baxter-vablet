@@ -21,7 +21,10 @@ $owl.owlCarousel({
   items: 1,
   touchDrag: true,
   URLhashListener:true,
-  startPosition: 'URLHash'
+  startPosition: 'URLHash',
+  dotsSpeed: 0,
+  navSpeed: 0,
+  dragEndSpeed: 0
 });
 
 var $owlSlide3 = $(".owl-slide3");
