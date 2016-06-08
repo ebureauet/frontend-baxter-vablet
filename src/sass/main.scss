@@ -6,6 +6,7 @@ $error: #f00000;
 
 @import "reset";
 @import "mixins/gradient";
+@import "utilities/icons";
 @import "anim";
 @import "fonts";
 @import "global";
@@ -204,11 +205,12 @@ b{
         line-height:1.2;
         margin-bottom: 20px;
         &:before{
-          content:'⚫';
+          content: icon-char('dot');
+          @extend %icon;
           position: absolute;
-          top: 0.5em;
+          top: 1em;
           left: -30px;
-          font-size: 0.65em;
+          font-size: 0.4em;
           margin: 0;
           padding: 0;
           display: block;

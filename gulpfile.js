@@ -10,7 +10,9 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
-    watch = require('gulp-watch')
+    watch = require('gulp-watch'),
+    iconfont = require('gulp-iconfont'),
+    iconfontcss = require('gulp-iconfont-css'),
     browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
     runSequence = require('run-sequence'),
@@ -106,6 +108,31 @@ gulp.task('img-optim', function(){
       use: [pngquant()]
   }))
   .pipe(gulp.dest('dist/img/'));
+});
+
+var fontName = 'Icons';
+
+gulp.task('iconfont', function(){
+  gulp.src(['src/svg/*.svg'])
+    .pipe(iconfontcss({
+      fontName: fontName,
+      path: './node_modules/gulp-iconfont-css/templates/_icons.scss',
+      targetPath: '../../sass/utilities/_icons.scss',
+      fontPath: '../fonts/icons/'
+    }))
+    .pipe(iconfont({
+      fontName: fontName,
+      fixedWidth: true,
+      centerHorizontally: true,
+      normalize: true,
+      fontHeight:1000,
+      descent: 0
+     }))
+    .pipe(gulp.dest('src/fonts/icons/'));
+});
+
+gulp.task('makeicons', function(callback) {
+  runSequence('iconfont', 'sass', 'html');
 });
 
 

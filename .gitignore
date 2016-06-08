@@ -5,4 +5,6 @@ dist.zhtml
 src/css
 src/js/main.js
 src/index.html
+src/fonts/icons
+src/sass/utilities/_icons.scss
 PDF Files/
