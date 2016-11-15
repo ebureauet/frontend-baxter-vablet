@@ -3,14 +3,13 @@ window.alert = function () {
 };
 
 FastClick.attach(document.body);
-$(function(){
-  setTimeout(function() {
-    if (localStorage.returnToReferencePage == "true") {
-      localStorage.returnToReferencePage = "false";
-      window.location = localStorage.slideToBeReturn;
-    }
-  },100);
-});
+
+
+if (localStorage.returnToReferencePage == "true") {
+    localStorage.returnToReferencePage = "false";
+    window.location = localStorage.slideToBeReturn;
+}
+
 
 
 $(".btn-link-brochure, .btn-link-datasheet, .btn-referrence").on("click", function() {
